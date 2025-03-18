@@ -23,6 +23,7 @@
             border-radius: 15px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out;
         }
 
         h1 {
@@ -30,6 +31,7 @@
             color: #d0d700;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: glow 3s infinite;
         }
 
         h2 {
@@ -58,12 +60,14 @@
             border-radius: 8px;
             transition: all 0.3s ease;
             border: 2px solid rgba(255, 255, 255, 0.1);
+            animation: pulse 2s infinite;
         }
 
         .menu-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             background: linear-gradient(45deg, #2980b9, #3498db);
+            animation: none;
         }
 
         .description {
@@ -87,6 +91,41 @@
 
         .footer a:hover {
             color: #ffffff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #d0d700;
+            }
+            50% {
+                text-shadow: 0 0 20px #d0d700;
+            }
+            100% {
+                text-shadow: 0 0 5px #d0d700;
+            }
         }
 
         @media (max-width: 600px) {
@@ -114,7 +153,7 @@
         <h2>Special Event!</h2>
         <div class="menu-buttons">
             <a href="https://wordhanda.github.io/CGU%20Tender%20Bar%202024%20Menu.pdf" target="_blank" class="menu-button">經典調酒</a>
-            <a href="https://wordhanda.github.io/飲調週.pdf" target="_blank" class="menu-button">瑞的特條</a>
+            <a href="https://wordhanda.github.io/飲調週.pdf" target="_blank" class="menu-button">♂️瑞の特調</a>
         </div>
         <p class="description">Explore the best cocktails of the week!</p>
         <div class="footer">
