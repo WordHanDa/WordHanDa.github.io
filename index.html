@@ -3,72 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>飲調週菜單</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+    <title>飲調週菜單 | Bee's Knees Kyoto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
             background-color: #000000;
             color: #c9a063;
             text-align: center;
-            padding: 0;
-            margin: 0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        
+        /* Header styles */
+        header {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+        
+        .logo {
+            margin-left: 30px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin: 0 15px;
+        }
+        
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9em;
+            letter-spacing: 0.2em;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: #c9a063;
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-right: 30px;
+        }
+        
+        .social-icons a {
+            color: #ffffff;
+            margin-left: 15px;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+        
+        /* Hero section */
+        .hero {
+            background-image: url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             position: relative;
         }
-
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+        }
+        
+        .main-logo {
+            max-width: 380px;
+            margin-bottom: 30px;
+        }
+        
+        .hero h2 {
+            font-size: 1.8em;
+            color: #ffffff;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Address section */
+        .address {
+            padding: 50px 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .address p {
+            font-size: 1em;
+            letter-spacing: 0.1em;
+            line-height: 1.8;
+            color: #ffffff;
+        }
+        
+        /* Menu section */
+        .menu-section {
+            padding: 80px 20px;
+            background-color: #000000;
+        }
+        
         h1 {
-            font-size: 4em;
+            font-size: 3em;
             color: #c9a063;
             margin-bottom: 30px;
             font-weight: 400;
             letter-spacing: 0.1em;
-            animation: fadeIn 2s ease-out;
         }
-
+        
         h2 {
-            font-size: 1.8em;
+            font-size: 1.5em;
             color: #8b7355;
             margin-bottom: 40px;
             font-weight: 400;
             letter-spacing: 0.2em;
-            text-transform: none;
         }
-
+        
         .menu-buttons {
             display: flex;
             justify-content: center;
             gap: 40px;
             margin: 50px 0;
         }
-
+        
         .menu-button {
             display: inline-block;
             text-decoration: none;
-            font-size: 1.4em;
+            font-size: 1.2em;
             color: #c9a063;
             background: transparent;
-            padding: 20px 40px;
+            padding: 15px 30px;
             border: 1px solid #c9a063;
             transition: all 0.6s ease;
             letter-spacing: 0.2em;
         }
-
+        
         .menu-button:hover {
             background: #c9a063;
             color: #000000;
             transform: translateY(-5px);
         }
-
+        
         .description {
             font-size: 1.2em;
             color: #8b7355;
@@ -76,48 +189,146 @@
             line-height: 1.8;
             letter-spacing: 0.1em;
         }
-
+        
+        /* Footer */
+        footer {
+            padding: 30px 20px;
+            background-color: #000000;
+            margin-top: auto;
+        }
+        
         .footer {
-            margin-top: 60px;
             font-size: 0.9em;
             color: #666666;
             letter-spacing: 0.1em;
         }
-
+        
         .footer a {
             color: #c9a063;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
+        
         .footer a:hover {
             color: #8b7355;
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            cursor: pointer;
+            margin-right: 30px;
+            z-index: 101;
         }
-
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 2px;
+            margin: 5px auto;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        
+        /* Media queries */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
+            .logo {
+                margin-left: 20px;
             }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.95);
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                transition: 0.3s;
+                justify-content: center;
+                z-index: 100;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 20px 0;
+            }
+            
+            .nav-menu a {
+                font-size: 1.2em;
+            }
+            
+            .social-icons {
+                display: none;
+            }
+            
             .menu-buttons {
                 flex-direction: column;
                 gap: 20px;
+            }
+            
+            .main-logo {
+                max-width: 280px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
+        <div class="logo">
+            <a href="#"><img src="/api/placeholder/160/40" alt="Bee's Knees"></a>
+        </div>
+        
+        <div class="mobile-menu-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">MENU</a></li>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+        
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">ⓘ</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <img src="/api/placeholder/380/200" alt="Bee's Knees Kyoto" class="main-logo">
+            <h2>Speakeasy Bar Kyoto</h2>
+        </div>
+    </section>
+    
+    <section class="address">
+        <p>364 Kamiyacho,Agaru,Kiyamachi,Nakagyo-ku,KYOTO</p>
+        <p>JAPAN</p>
+        <p>604 8024</p>
+    </section>
+    
+    <section class="menu-section">
         <h1>飲調週菜單</h1>
         <h2>Special Event!</h2>
         <div class="menu-buttons">
@@ -125,9 +336,46 @@
             <a href="https://wordhanda.github.io/飲調週.pdf" target="_blank" class="menu-button">♂️瑞の特調</a>
         </div>
         <p class="description">Explore the best cocktails of the week!</p>
+    </section>
+    
+    <footer>
         <div class="footer">
             &copy; <a href="https://www.instagram.com/cgu_bartend/" target="_blank">2025 CGU Bartend</a>
         </div>
-    </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenuBtn.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                
+                if(mobileMenuBtn.classList.contains('active')) {
+                    mobileMenuBtn.querySelector('.bar:nth-child(1)').style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    mobileMenuBtn.querySelector('.bar:nth-child(2)').style.opacity = '0';
+                    mobileMenuBtn.querySelector('.bar:nth-child(3)').style.transform = 'rotate(-45deg) translate(7px, -8px)';
+                } else {
+                    mobileMenuBtn.querySelector('.bar:nth-child(1)').style.transform = 'none';
+                    mobileMenuBtn.querySelector('.bar:nth-child(2)').style.opacity = '1';
+                    mobileMenuBtn.querySelector('.bar:nth-child(3)').style.transform = 'none';
+                }
+            });
+            
+            // Close menu when a nav link is clicked
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.querySelector('.bar:nth-child(1)').style.transform = 'none';
+                    mobileMenuBtn.querySelector('.bar:nth-child(2)').style.opacity = '1';
+                    mobileMenuBtn.querySelector('.bar:nth-child(3)').style.transform = 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
