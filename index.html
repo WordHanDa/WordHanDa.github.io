@@ -2,132 +2,381 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>飲調週菜單</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>飲調週菜單 | CGU Tender Bar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --gold: #c9a063;
+            --gold-dark: #8b7355;
+            --black: #000000;
+            --dark-gray: #222222;
+            --light-gray: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
-            background-color: #000000;
-            color: #c9a063;
+            background-color: var(--black);
+            color: var(--gold);
             text-align: center;
-            padding: 0;
-            margin: 0;
             min-height: 100vh;
+            min-height: calc(var(--vh, 1vh) * 100);
             display: flex;
             flex-direction: column;
             justify-content: center;
+            background-image: url('https://wordhanda.github.io/background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            overflow-x: hidden;
         }
-
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
             position: relative;
+            z-index: 1;
+            animation: fadeIn 1.5s ease-out;
         }
-
-        h1 {
-            font-size: 4em;
-            color: #c9a063;
+        
+        .logo {
             margin-bottom: 30px;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            animation: fadeIn 2s ease-out;
         }
-
-        h2 {
-            font-size: 1.8em;
-            color: #8b7355;
-            margin-bottom: 40px;
+        
+        .logo img {
+            max-width: 120px;
+            height: auto;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 20px;
             font-weight: 400;
             letter-spacing: 0.2em;
-            text-transform: none;
+            text-transform: uppercase;
         }
-
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--gold-dark);
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            font-style: italic;
+        }
+        
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            margin: 50px 0;
+        }
+        
         .menu-buttons {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin: 50px 0;
+            gap: 50px;
         }
-
+        
         .menu-button {
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-decoration: none;
-            font-size: 1.4em;
-            color: #c9a063;
-            background: transparent;
-            padding: 20px 40px;
-            border: 1px solid #c9a063;
-            transition: all 0.6s ease;
-            letter-spacing: 0.2em;
+            transition: all 0.5s ease;
         }
-
-        .menu-button:hover {
-            background: #c9a063;
-            color: #000000;
-            transform: translateY(-5px);
+        
+        .menu-icon {
+            width: 150px;
+            height: 150px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.5s ease;
         }
-
+        
+        .menu-icon i {
+            font-size: 3rem;
+            color: var(--gold);
+            transition: all 0.5s ease;
+        }
+        
+        .menu-label {
+            font-size: 1.6rem;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            transition: all 0.5s ease;
+        }
+        
+        .menu-button:hover .menu-icon {
+            background-color: var(--gold);
+            transform: translateY(-10px);
+        }
+        
+        .menu-button:hover .menu-icon i {
+            color: var(--black);
+        }
+        
+        .menu-button:hover .menu-label {
+            color: var(--gold-dark);
+        }
+        
         .description {
-            font-size: 1.2em;
-            color: #8b7355;
-            margin: 40px 0;
+            font-size: 1.3rem;
+            color: var(--gold-dark);
+            margin: 40px auto;
+            max-width: 700px;
             line-height: 1.8;
             letter-spacing: 0.1em;
         }
-
+        
+        .separator {
+            width: 150px;
+            height: 1px;
+            background-color: var(--gold);
+            margin: 50px auto;
+            position: relative;
+        }
+        
+        .separator::before {
+            content: "✦";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--black);
+            padding: 0 20px;
+            color: var(--gold);
+        }
+        
+        .social-links {
+            margin: 40px 0;
+        }
+        
+        .social-links a {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+        
+        .social-links a:hover {
+            color: var(--gold-dark);
+            transform: translateY(-5px);
+        }
+        
         .footer {
             margin-top: 60px;
-            font-size: 0.9em;
-            color: #666666;
+            font-size: 1rem;
+            color: var(--light-gray);
             letter-spacing: 0.1em;
         }
-
+        
         .footer a {
-            color: #c9a063;
+            color: var(--gold);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
+        
         .footer a:hover {
-            color: #8b7355;
+            color: var(--gold-dark);
         }
-
+        
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
+        
+        /* Improved Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 50px 20px;
+            }
+            
+            .menu-icon {
+                width: 130px;
+                height: 130px;
+            }
+        }
+        
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5em;
+                font-size: 2.5rem;
             }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
             .menu-buttons {
                 flex-direction: column;
-                gap: 20px;
+                gap: 50px;
+            }
+            
+            .menu-icon {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .container {
+                padding: 40px 20px;
+            }
+            
+            .description {
+                font-size: 1.1rem;
+                padding: 0 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 0.15em;
+            }
+            
+            h2 {
+                font-size: 1.1rem;
+                margin-bottom: 40px;
+            }
+            
+            .menu-icon {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .menu-icon i {
+                font-size: 2.5rem;
+            }
+            
+            .menu-label {
+                font-size: 1.3rem;
+            }
+            
+            .separator {
+                width: 100px;
+            }
+            
+            .description {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .social-links a {
+                font-size: 1.5rem;
+                margin: 0 10px;
+            }
+        }
+        
+        /* Fix for extremely small screens */
+        @media (max-width: 320px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 30px 15px;
+            }
+            
+            .menu-icon {
+                width: 90px;
+                height: 90px;
             }
         }
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="container">
         <h1>飲調週菜單</h1>
-        <h2>Special Event!</h2>
-        <div class="menu-buttons">
-            <a href="https://wordhanda.github.io/CGU%20Tender%20Bar%202024%20Menu.pdf" target="_blank" class="menu-button">經典調酒</a>
-            <a href="https://wordhanda.github.io/飲調週.pdf" target="_blank" class="menu-button">♂️瑞の特調</a>
+        <h2>Cocktail Week Special Event</h2>
+        
+        <div class="separator"></div>
+        
+        <div class="menu-container">
+            <div class="menu-buttons">
+                <a href="https://wordhanda.github.io/CGU%20Tender%20Bar%202024%20Menu.pdf" target="_blank" class="menu-button">
+                    <div class="menu-icon">
+                        <i class="fas fa-glass-martini-alt"></i>
+                    </div>
+                    <span class="menu-label">經典調酒</span>
+                </a>
+                
+                <a href="https://wordhanda.github.io/飲調週.pdf" target="_blank" class="menu-button">
+                    <div class="menu-icon">
+                        <i class="fas fa-cocktail"></i>
+                    </div>
+                    <span class="menu-label">瑞の特調</span>
+                </a>
+            </div>
         </div>
-        <p class="description">Explore the best cocktails of the week!</p>
+        
+        <p class="description">探索本週最精緻的調酒作品，由我們專業的調酒師精心調製，為您帶來獨特的味覺體驗。</p>
+        
+        <div class="separator"></div>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/cgu_bartend/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        
         <div class="footer">
-            &copy; <a href="https://www.instagram.com/cgu_bartend/" target="_blank">2025 CGU Bartend</a>
+            &copy; 2025 <a href="https://www.instagram.com/cgu_bartend/" target="_blank">CGU Tender Bar</a> | All Rights Reserved
         </div>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling for better UX
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Handle viewport height issues on mobile browsers
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            
+            window.addEventListener('resize', () => {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            });
+        });
+    </script>
 </body>
 </html>
