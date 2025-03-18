@@ -4,99 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>飲調週菜單</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Noto Sans TC', Arial, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-            color: #ffffff;
+            font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+            background-color: #000000;
+            color: #c9a063;
             text-align: center;
-            padding: 50px 20px;
-            min-height: 100vh;
+            padding: 0;
             margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            animation: fadeIn 1s ease-out;
+            padding: 40px 20px;
+            position: relative;
         }
 
         h1 {
-            font-size: 3em;
-            color: #d0d700;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: glow 3s infinite;
+            font-size: 4em;
+            color: #c9a063;
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            animation: fadeIn 2s ease-out;
         }
 
         h2 {
-            color: #ff9f43;
-            font-size: 2em;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 1.8em;
+            color: #8b7355;
+            margin-bottom: 40px;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: none;
         }
 
         .menu-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 30px 0;
+            gap: 40px;
+            margin: 50px 0;
         }
 
         .menu-button {
             display: inline-block;
             text-decoration: none;
-            font-size: 1.2em;
-            color: #000000;
-            background: linear-gradient(45deg, #d5db34, #b9b929);
-            padding: 15px 30px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            animation: pulse 2s infinite;
+            font-size: 1.4em;
+            color: #c9a063;
+            background: transparent;
+            padding: 20px 40px;
+            border: 1px solid #c9a063;
+            transition: all 0.6s ease;
+            letter-spacing: 0.2em;
         }
 
         .menu-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(45deg, #106102, #106102);
-            animation: none;
+            background: #c9a063;
+            color: #000000;
+            transform: translateY(-5px);
         }
 
         .description {
             font-size: 1.2em;
-            color: #cccccc;
-            margin: 20px 0;
-            line-height: 1.6;
+            color: #8b7355;
+            margin: 40px 0;
+            line-height: 1.8;
+            letter-spacing: 0.1em;
         }
 
         .footer {
-            margin-top: 40px;
+            margin-top: 60px;
             font-size: 0.9em;
-            color: #888888;
+            color: #666666;
+            letter-spacing: 0.1em;
         }
 
         .footer a {
-            color: #d0d700;
+            color: #c9a063;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer a:hover {
-            color: #ffffff;
+            color: #8b7355;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -104,45 +105,13 @@
             }
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 5px #d0d700;
-            }
-            50% {
-                text-shadow: 0 0 20px #d0d700;
-            }
-            100% {
-                text-shadow: 0 0 5px #d0d700;
-            }
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 20px;
-            }
-
-            .container {
-                padding: 20px;
-            }
-
+        @media (max-width: 768px) {
             h1 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
-
-            h2 {
-                font-size: 1.5em;
+            .menu-buttons {
+                flex-direction: column;
+                gap: 20px;
             }
         }
     </style>
@@ -157,7 +126,7 @@
         </div>
         <p class="description">Explore the best cocktails of the week!</p>
         <div class="footer">
-            &copy; <a href="https://www.instagram.com/cgu_bartend/" target="_blank">2024 CGU Bartend</a>
+            &copy; <a href="https://www.instagram.com/cgu_bartend/" target="_blank">2025 CGU Bartend</a>
         </div>
     </div>
 </body>
