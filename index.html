@@ -6,70 +6,120 @@
     <title>飲調週菜單</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
+            font-family: 'Noto Sans TC', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #ffffff;
             text-align: center;
-            padding: 50px;
+            padding: 50px 20px;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         h1 {
-            font-size: 2.5em;
-            color: #2c3e50;
-            margin-bottom: 30px;
+            font-size: 3em;
+            color: #d0d700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        p a {
+        h2 {
+            color: #ff9f43;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .menu-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .menu-button {
             display: inline-block;
             text-decoration: none;
             font-size: 1.2em;
             color: #fff;
-            background-color: #3498db;
+            background: linear-gradient(45deg, #3498db, #2980b9);
             padding: 15px 30px;
-            margin: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
-        h3 a {
+        .menu-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #2980b9, #3498db);
+        }
+
+        .description {
+            font-size: 1.2em;
+            color: #cccccc;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #888888;
+        }
+
+        .footer a {
+            color: #d0d700;
             text-decoration: none;
-            color: blue; /* Inherit the color from the <h3> element */
+            transition: color 0.3s ease;
         }
 
-        h4 a {
-            text-decoration: none;
-            color: black; /* Inherit the color from the <h3> element */
+        .footer a:hover {
+            color: #ffffff;
         }
 
-        a:hover {
-            background-color: #2980b9;
-        }
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+            .container {
+                padding: 20px;
+            }
 
-        p {
-            font-size: 1.1em;
-            color: #7f8c8d;
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>飲調週菜單</h1>
-        <h2>Spacial Event!</h2>
-        <h3>標註恆器制酒及333紅茶甜酒的IG<br>(
-            <a href="https://www.instagram.com/hcdistillery/">@hcdistillery </a>&
-            <a href="https://www.instagram.com/333guishan/">@333guishan</a>)<br>即可享333特調系列50元折扣!
-        </h3>
-        <p>
-            <a href="https://wordhanda.github.io/CGU Tender Bar 2024 Menu.pdf" target="_blank">Main Menu</a>
-            <a href="https://wordhanda.github.io/飲調週.pdf" target="_blank">Special by Ray</a>
-        </p>
-        <p>Explore the best cocktails of the week!</p>
-        <h5>&copy; <a href="https://www.instagram.com/cgu_bartend/">2024 CGU Bartend</a></h5>
+        <h2>Special Event!</h2>
+        <div class="menu-buttons">
+            <a href="https://wordhanda.github.io/CGU%20Tender%20Bar%202024%20Menu.pdf" target="_blank" class="menu-button">Main Menu</a>
+            <a href="https://wordhanda.github.io/飲調週.pdf" target="_blank" class="menu-button">Special by Ray</a>
+        </div>
+        <p class="description">Explore the best cocktails of the week!</p>
+        <div class="footer">
+            &copy; <a href="https://www.instagram.com/cgu_bartend/" target="_blank">2024 CGU Bartend</a>
+        </div>
     </div>
 </body>
 </html>
