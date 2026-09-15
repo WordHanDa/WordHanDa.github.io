@@ -1,245 +1,194 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" class="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人作品集 | Full-Stack & Systems Engineering</title>
-    <!-- Google Fonts & Font Awesome Icons -->
+    <title>Personal Portfolio | Engineer & Developer</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- 自訂 CSS 樣式表 -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 引用獨立樣式檔 -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="body-element">
+    <div class="overlay"></div>
 
-    <!-- 導航列 -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">&lt;Dev/&gt;</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about">關於我</a></li>
-                    <li><a href="#skills">核心技能</a></li>
-                    <li><a href="#projects">專案展示</a></li>
-                    <li><a href="#contact">聯絡方式</a></li>
-                </ul>
-            </nav>
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
+    <div class="home-page container">
+        <!-- 固定頂層 Hero 區域 -->
+        <header class="header-content">
+            <div class="header-sublabel">Engineering & Development</div>
+            <h1 class="hero-title">ENGINEERING CRAFT</h1>
+            <div class="header-subtitle">軟體全端開發 ✦ 電機電力系統 ✦ 嵌入式軟韌體整合</div>
+            <div class="scroll-indicator">✦ SCROLL TO EXPLORE ✦</div>
+        </header>
 
-    <!-- Hero 首頁橫幅 -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <span class="badge">Full-Stack & Systems Engineer</span>
-            <h1>跨越軟體開發與實體系統的<br><span class="highlight">全方位工程實踐者</span></h1>
-            <p>專注於全端系統架構（React / Node.js / SQL）、電力系統分析、嵌入式硬體韌體整合以及工程模擬計算。</p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary"><i class="fas fa-code-branch"></i> 瀏覽專案</a>
-                <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> 聯絡我</a>
-            </div>
-        </div>
-    </section>
+        <!-- 滾動內容區域 -->
+        <main class="scrolling-content">
+            <!-- 理念與個人簡介 -->
+            <section class="description-section">
+                <p class="description">
+                    遊走於數位邏輯與實體硬體之間。專注於現代化全端架構設計、智慧電力系統與演算法分析，以及微控制器軟硬體協同開發。追求極致簡約的工程設計與嚴謹的代碼實作。
+                </p>
+            </section>
 
-    <!-- 關於我 -->
-    <section class="section" id="about">
-        <div class="section-title">
-            <h2>About Me</h2>
-            <p>融合軟體開發思維與電機工程專業的跨領域工程師</p>
-        </div>
-        <div class="about-grid">
-            <div class="about-text">
-                <p>熱衷於打造穩定、高效且具備擴展性的現代系統。我的實踐範疇涵蓋：從現代化雲端 Web 應用的架構與資料庫設計，延伸到電力網路分析、演算法最佳化，以及結合微控制器的嵌入式物聯網設計。</p>
-                <p>具備扎實的演算法與數值模擬基礎，善於將複雜的數學模型與實體物理架構轉化為具體的數位軟體實作。</p>
-            </div>
-            <div class="stats-cards">
-                <div class="stat-card">
-                    <i class="fas fa-layer-group"></i>
-                    <h3>Full-Stack</h3>
-                    <p>Web 應用與 API 系統開發</p>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Power & Circuits</h3>
-                    <p>電力系統與類比電路分析</p>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-microchip"></i>
-                    <h3>Embedded & IoT</h3>
-                    <p>硬體通訊與微控制器韌體</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- 核心領域捷徑選單 -->
+            <section class="menu-container">
+                <div class="menu-buttons">
+                    <a class="menu-button" data-target=".section-pos">
+                        <div class="menu-icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <span class="menu-label">Full Stack</span>
+                        <span class="menu-sublabel">全端系統架構</span>
+                    </a>
 
-    <!-- 技能領域 -->
-    <section class="section section-dark" id="skills">
-        <div class="section-title">
-            <h2>Technical Skills</h2>
-            <p>系統化掌握的技術工具箱</p>
-        </div>
-        <div class="skills-wrapper">
-            <!-- 軟體與全端開發 -->
-            <div class="skill-category">
-                <div class="cat-header">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>全端與軟體架構</h3>
-                </div>
-                <ul class="skill-tags">
-                    <li>JavaScript / TypeScript</li>
-                    <li>React.js</li>
-                    <li>Node.js / Express</li>
-                    <li>MySQL / MariaDB</li>
-                    <li>RESTful API 架構</li>
-                    <li>Vercel / 雲端部署</li>
-                </ul>
-            </div>
+                    <a class="menu-button" data-target=".section-power">
+                        <div class="menu-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <span class="menu-label">Power & Math</span>
+                        <span class="menu-sublabel">電力與電路工程</span>
+                    </a>
 
-            <!-- 電機與電力工程 -->
-            <div class="skill-category">
-                <div class="cat-header">
-                    <i class="fas fa-plug-circle-bolt"></i>
-                    <h3>電機與電力系統</h3>
+                    <a class="menu-button" data-target=".section-embedded">
+                        <div class="menu-icon">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <span class="menu-label">Embedded</span>
+                        <span class="menu-sublabel">微控制器與自動化</span>
+                    </a>
                 </div>
-                <ul class="skill-tags">
-                    <li>電力系統經濟調度 (Economic Dispatch)</li>
-                    <li>感應電動機機械特性分析</li>
-                    <li>運算放大器 (Op-Amp) 電路設計</li>
-                    <li>圖論在智慧電網中的應用</li>
-                </ul>
-            </div>
+            </section>
 
-            <!-- 嵌入式與微控制器 -->
-            <div class="skill-category">
-                <div class="cat-header">
-                    <i class="fas fa-microchip"></i>
-                    <h3>嵌入式硬體與韌體</h3>
-                </div>
-                <ul class="skill-tags">
-                    <li>Arduino 開發生態系</li>
-                    <li>C / C++ 韌體撰寫</li>
-                    <li>RFID (MFRC522) 通訊整合</li>
-                    <li>周邊模組 (I2C / SPI / LCD)</li>
-                </ul>
-            </div>
+            <div class="separator"></div>
 
-            <!-- 模擬與數值工具 -->
-            <div class="skill-category">
-                <div class="cat-header">
-                    <i class="fas fa-square-root-variable"></i>
-                    <h3>模擬與自動化腳本</h3>
-                </div>
-                <ul class="skill-tags">
-                    <li>MATLAB / Simulink 動態模擬</li>
-                    <li>數值計算與矩陣分析</li>
-                    <li>Tampermonkey / 瀏覽器自動化腳本</li>
-                    <li>Git / 版本控制</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- 專案展示 -->
-    <section class="section" id="projects">
-        <div class="section-title">
-            <h2>Featured Projects</h2>
-            <p>歷年重要實作與架構成果</p>
-        </div>
-        <div class="projects-grid">
-            
-            <!-- 專案 1: POS 餐廳管理系統 -->
-            <div class="project-card">
-                <div class="project-banner pos-bg">
-                    <i class="fas fa-cash-register"></i>
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Full-Stack Application</span>
-                    <h3>智慧餐廳點餐與營運管理系統 (POS)</h3>
-                    <p>採用 React + Node.js/Express + 關聯式資料庫打造的高效能餐飲管理平台。具備自訂即時座位配置、即時出餐優先佇列，以及交易與財務對帳稽核機制。</p>
-                    <div class="project-tech">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MariaDB</span>
-                        <span>Vercel</span>
+            <!-- 全端專案區塊 (Event 卡片風格) -->
+            <article class="Event section-pos">
+                <div class="Event-container">
+                    <div class="condition-title-container">
+                        <h2 class="condition-title">Full Stack Platform</h2>
+                        <span class="condition-subtitle">即時營運與管理系統</span>
                     </div>
+                    <p class="event-text">
+                        運用現代全端架構打造高彈性、響應式的餐飲營運與管理系統。強調即時狀態同步、嚴密的資料庫關聯設計與雲端無縫部署。
+                    </p>
+                    <table class="spec-table">
+                        <tbody>
+                            <tr class="spec-table-row">
+                                <th class="spec-header">核心架構</th>
+                                <td class="spec-data">React · Node.js · Express · RESTful APIs</td>
+                            </tr>
+                            <tr class="spec-table-row">
+                                <th class="spec-header">資料與部署</th>
+                                <td class="spec-data">MySQL / MariaDB · Foreign Key Optimization · Vercel</td>
+                            </tr>
+                            <tr class="spec-table-row">
+                                <th class="spec-header">亮點特色</th>
+                                <td class="spec-data">
+                                    互動式動態桌位配置網格、後廚即時優先佇列排程、財務與訂單審計統計。
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
+            </article>
 
-            <!-- 專案 2: 智慧電網與調度計算 -->
-            <div class="project-card">
-                <div class="project-banner power-bg">
-                    <i class="fas fa-network-wired"></i>
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Power Systems</span>
-                    <h3>電力網路拓撲與最佳化調度模型</h3>
-                    <p>利用圖論演算法整合電網拓撲資料，配合發電機成本曲線進行發電機組經濟調度（Economic Dispatch）計算與負載潮流最佳化。</p>
-                    <div class="project-tech">
-                        <span>MATLAB</span>
-                        <span>Graph Theory</span>
-                        <span>Optimization</span>
+            <!-- 電力與演算法區塊 (Condition 卡片風格) -->
+            <article class="condition section-power">
+                <div class="condition-container">
+                    <div class="condition-title-container">
+                        <h2 class="condition-title">Power Systems & Analysis</h2>
+                        <span class="condition-subtitle">電力工程與智慧電網</span>
                     </div>
+                    <p class="event-text">
+                        深耕電機動力學與電力系統分析，結合圖論 (Graph Theory) 與關聯資料庫建構智慧電網拓撲模型，探討最佳經濟調度 (Economic Dispatch)。
+                    </p>
+                    <table class="spec-table">
+                        <tbody>
+                            <tr class="spec-table-row">
+                                <th class="spec-header">專業範疇</th>
+                                <td class="spec-data">感應馬達力學 · 複數電路分析 · 運算放大器應用</td>
+                            </tr>
+                            <tr class="spec-table-row">
+                                <th class="spec-header">演算法建模</th>
+                                <td class="spec-data">經濟調度運算 · 圖論拓撲建模 · Smart Grid 整合</td>
+                            </tr>
+                            <tr class="spec-table-row">
+                                <th class="spec-header">模擬工具</th>
+                                <td class="spec-data">MATLAB · Simulink 跨平台環境配置與模擬分析</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
+            </article>
 
-            <!-- 專案 3: 嵌入式硬體通訊系統 -->
-            <div class="project-card">
-                <div class="project-banner iot-bg">
-                    <i class="fas fa-id-card-clip"></i>
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Embedded & Hardware</span>
-                    <h3>微控制器多模組通訊與驗證系統</h3>
-                    <p>基於 Arduino 架構實作 RFID (MFRC522) 無線射頻辨識、防彈跳 (Debouncing) 機制，並串接液晶顯示器與周邊通訊介面進行即時硬體狀態回饋。</p>
-                    <div class="project-tech">
-                        <span>Arduino</span>
-                        <span>C/C++</span>
-                        <span>SPI / I2C</span>
-                        <span>RFID</span>
+            <!-- 嵌入式與自動化區塊 (Event 卡片風格) -->
+            <article class="Event section-embedded">
+                <div class="Event-container">
+                    <div class="condition-title-container">
+                        <h2 class="condition-title">Embedded & Scripting</h2>
+                        <span class="condition-subtitle">硬體控制與工作流自動化</span>
                     </div>
+                    <p class="event-text">
+                        專注於微控制器韌體開發、外設介面驅動及生活自動化腳本，打通從硬體底層訊號到瀏覽器前端自動化的各個環節。
+                    </p>
+                    <table class="spec-table">
+                        <tbody>
+                            <tr class="spec-table-row">
+                                <th class="spec-header">硬體整合</th>
+                                <td class="spec-data">Arduino · RFID (MFRC522) 通訊 · LCD 模組 · 訊號去彈跳處理</td>
+                            </tr>
+                            <tr class="spec-table-row">
+                                <th class="spec-header">自動化開發</th>
+                                <td class="spec-data">DOM 分析 · Tampermonkey 腳本 · 智慧填表與查詢流程最佳化</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
+            </article>
 
-        </div>
-    </section>
+            <div class="separator"></div>
 
-    <!-- 聯絡方式 -->
-    <section class="section section-dark" id="contact">
-        <div class="section-title">
-            <h2>Get In Touch</h2>
-            <p>歡迎交流技術、合作專案或工程挑戰</p>
-        </div>
-        <div class="contact-card">
-            <p>目前隨時歡迎全端系統、電力工程或硬體整合的技術探討。點擊下方按鈕或透過社群連結與我取得聯繫！</p>
-            <div class="contact-links">
-                <a href="mailto:contact@example.com" class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>發送郵件</span>
-                </a>
-                <a href="https://github.com" target="_blank" class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
-            </div>
-        </div>
-    </section>
+            <!-- 個人理念段落 -->
+            <section class="story-section">
+                <p class="story">
+                    「工程的本質在於以最優雅嚴謹的結構，解決真實世界中的複雜問題。」
+                </p>
+                <p class="story">
+                    不論是千行代碼的狀態管理，還是毫秒級別的訊號抖動排除，始終追求精準、可靠與簡潔。
+                </p>
+            </section>
 
-    <!-- 頁尾 -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; <span id="year"></span> Engineering Portfolio. Designed with passion for code & systems.</p>
-        </div>
-    </footer>
+            <!-- 結語小註解 -->
+            <section class="warming-section">
+                <p class="warming">Continuous learning, building reliable systems, and mastering fundamentals.</p>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link-item" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:contact@example.com" class="social-link-item" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link-item" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </section>
 
-    <!-- 自訂 JS 腳本 -->
+            <!-- 頁尾 -->
+            <footer class="footer">
+                <p class="footer-text">
+                    &copy; 2026 Portfolio. Crafted with elegance & precision. 
+                    <a href="#" class="footer-link">Back to Top</a>
+                </p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- 引用獨立 JS 檔 -->
     <script src="script.js"></script>
 </body>
 </html>

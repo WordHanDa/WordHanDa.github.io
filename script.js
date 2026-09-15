@@ -1,63 +1,45 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. 自動更新頁尾年份
-    const yearSpan = document.getElementById("year");
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
+// 初始化視窗高度，避免行動端瀏覽器 URL bar 造成的 100vh 抖動
+function setViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
 
-    // 2. 行動裝置漢堡選單展開 / 收合
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
+window.addEventListener('resize', setViewportHeight);
+window.addEventListener('orientationchange', setViewportHeight);
+setViewportHeight();
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-            // 切換圖示
-            const icon = menuToggle.querySelector("i");
-            if (icon) {
-                icon.classList.toggle("fa-bars");
-                icon.classList.toggle("fa-xmark");
-            }
-        });
-
-        // 點擊連結後自動關閉選單
-        navLinks.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                navLinks.classList.remove("active");
-                const icon = menuToggle.querySelector("i");
-                if (icon) {
-                    icon.classList.add("fa-bars");
-                    icon.classList.remove("fa-xmark");
-                }
-            });
-        });
-    }
-
-    // 3. 滾動進場淡入效果 (Scroll Reveal)
+// 元素滾動至可視區域時淡入
+document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
+                entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // 套用動畫元素
-    const animatedElements = document.querySelectorAll(
-        ".project-card, .skill-category, .stat-card, .about-text"
-    );
+    const animatedElements = document.querySelectorAll('.Event, .condition, .story');
+    animatedElements.forEach(el => revealObserver.observe(el));
 
-    animatedElements.forEach(el => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(24px)";
-        el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-        revealObserver.observe(el);
+    // 選單按鈕平滑滾動至目標區塊
+    const navButtons = document.querySelectorAll('.menu-button');
+    navButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = button.getAttribute('data-target');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
 });
