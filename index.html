@@ -1,197 +1,299 @@
 <!DOCTYPE html>
-<html lang="en" class="html-root">
+<html lang="zh-Hant" class="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Engineer | Backend Systems & Applied AI</title>
+    <title>SYS.ENG // 後端分散式架構 × 電機電力工程</title>
+    <!-- Fonts: JetBrains Mono & Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;800&family=Space+Grotesk:wght@400;600;700&family=Noto+Sans+TC:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="body-wrap">
+<body class="body-shell">
 
-    <header class="header-nav">
-        <div class="nav-container">
-            <span class="nav-identity">ARCH // SYSTEMS</span>
-            <nav class="nav-menu">
-                <a href="#about" class="nav-item">About</a>
-                <a href="#expertise" class="nav-item">Expertise</a>
-                <a href="#projects" class="nav-item">Projects</a>
-                <a href="#ethos" class="nav-item">Ethos</a>
-                <a href="#contact" class="nav-item">Contact</a>
+    <!-- 幾何背景電網與掃描線紋理 -->
+    <div class="blueprint-grid"></div>
+    <div class="scanline-overlay"></div>
+
+    <!-- 頂部控制面板 HUD -->
+    <header class="hud-header">
+        <div class="hud-container">
+            <div class="hud-brand-box">
+                <span class="hud-terminal-symbol">>_</span>
+                <span class="hud-brand-text">PWR::BACKEND_SYS.ARCH</span>
+                <span class="hud-live-tag">ONLINE // 60Hz</span>
+            </div>
+            <nav class="hud-nav">
+                <a href="#matrix" class="hud-nav-item">[ 01. 核心矩陣 ]</a>
+                <a href="#power-lab" class="hud-nav-item">[ 02. 電機拓撲 ]</a>
+                <a href="#backend-spec" class="hud-nav-item">[ 03. 後端架構 ]</a>
+                <a href="#axioms" class="hud-nav-item">[ 04. 工程公理 ]</a>
+                <a href="#terminal" class="hud-nav-item">[ 05. 終端通訊 ]</a>
             </nav>
         </div>
     </header>
 
-    <main class="main-layout">
+    <main class="console-wrapper">
 
-        <!-- Hero Section -->
-        <section class="section-hero reveal-on-scroll">
-            <div class="hero-status-tag">
-                <span class="status-indicator"></span>
-                <span class="status-text">SYSTEM ARCHITECTURE · APPLIED AI</span>
-            </div>
-            <h1 class="hero-title">Engineering Scalable Backend Systems & Practical AI Integrations.</h1>
-            <p class="hero-description">
-                Focusing on maintainable system design, cloud-native backend architecture, and production-grade LLM applications. Driven by first-principles reasoning rather than hype.
-            </p>
-            <div class="hero-spec-pills">
-                <span class="spec-pill">Distributed Systems</span>
-                <span class="spec-pill">API Design</span>
-                <span class="spec-pill">RAG & Agent Tooling</span>
-                <span class="spec-pill">Model Context Protocol (MCP)</span>
-            </div>
-        </section>
+        <!-- 震撼 HERO 區域：終端命令與高張力工程排版 -->
+        <section class="hero-monitor">
+            <div class="monitor-frame">
+                <div class="monitor-top-bar">
+                    <span class="monitor-dot red"></span>
+                    <span class="monitor-dot yellow"></span>
+                    <span class="monitor-dot green"></span>
+                    <span class="monitor-title">SYS_STATUS // OSCILLOSCOPE_INIT</span>
+                </div>
+                <div class="monitor-body">
+                    <div class="telemetry-row">
+                        <span class="telemetry-label">FREQUENCY:</span>
+                        <span class="telemetry-val">60.00 Hz</span>
+                        <span class="telemetry-separator">|</span>
+                        <span class="telemetry-label">VOLTAGE_RMS:</span>
+                        <span class="telemetry-val">380 V</span>
+                        <span class="telemetry-separator">|</span>
+                        <span class="telemetry-label">STATE:</span>
+                        <span class="telemetry-val-highlight">DETERMINISTIC</span>
+                    </div>
 
-        <!-- About Section -->
-        <section id="about" class="section-block reveal-on-scroll">
-            <div class="block-header">
-                <span class="block-index">01</span>
-                <h2 class="block-heading">Background & Focus</h2>
-            </div>
-            <div class="prose-card">
-                <p class="prose-paragraph">
-                    Specializes in backend architecture, cloud infrastructure, and AI-driven software development. Passionate about transforming complex business logic into maintainable, deterministic components while systematically evaluating scalability and long-term maintenance overhead.
-                </p>
-                <p class="prose-paragraph">
-                    View AI as an engineering accelerator: deploying language models, workflow automations, and intelligent tooling to eliminate development friction and resolve concrete business challenges.
-                </p>
-            </div>
-        </section>
+                    <h1 class="hero-headline">
+                        <span class="headline-glitch">CORE SYSTEMS</span><br>
+                        <span class="headline-sub">& GRID DYNAMICS</span>
+                    </h1>
 
-        <!-- Expertise Section -->
-        <section id="expertise" class="section-block reveal-on-scroll">
-            <div class="block-header">
-                <span class="block-index">02</span>
-                <h2 class="block-heading">Technical Domains</h2>
-            </div>
-
-            <div class="grid-card-stack">
-                <div class="domain-card">
-                    <span class="domain-badge">CORE DISCIPLINE</span>
-                    <h3 class="domain-title">Backend & Systems Architecture</h3>
-                    <p class="domain-summary">
-                        Designing reliable APIs, data models, and microservice boundaries. Prioritizing loose coupling, state isolation, and deterministic transaction management.
+                    <p class="hero-mission-statement">
+                        拒絕黑盒盲信，深挖底層物理與狀態轉移。專注於高擴展性分散式後端服務、三相感應馬達電磁動態建模，以及智慧電網圖論拓撲最佳化。
                     </p>
-                    <div class="tag-group">
-                        <span class="tech-tag">API Design</span>
-                        <span class="tech-tag">Cloud Native</span>
-                        <span class="tech-tag">Database Schema Design</span>
-                        <span class="tech-tag">Docker</span>
-                    </div>
-                </div>
 
-                <div class="domain-card">
-                    <span class="domain-badge">INTELLIGENCE</span>
-                    <h3 class="domain-title">Applied AI Engineering</h3>
-                    <p class="domain-summary">
-                        Productionizing LLM workflows with rigorous retrieval patterns (RAG), tool-calling agent runtimes, and standardization through Model Context Protocol (MCP).
-                    </p>
-                    <div class="tag-group">
-                        <span class="tech-tag">RAG Pipelines</span>
-                        <span class="tech-tag">Agentic Tool Use</span>
-                        <span class="tech-tag">MCP</span>
-                        <span class="tech-tag">Workflow Automation</span>
+                    <!-- 即時參數矩陣 HUD -->
+                    <div class="telemetry-grid">
+                        <div class="telemetry-card">
+                            <span class="tele-kpi-tag">IND_MOTOR // 力學動態</span>
+                            <span class="tele-kpi-val">Slip s &bull; &tau;<sub>e</sub>(&omega;)</span>
+                            <span class="tele-kpi-sub">非線性轉矩與轉差率閉迴路分析</span>
+                        </div>
+                        <div class="telemetry-card">
+                            <span class="tele-kpi-tag">GRID // 經濟調度</span>
+                            <span class="tele-kpi-val">&lambda;-Iteration</span>
+                            <span class="tele-kpi-sub">拉格朗日乘數與圖論拓撲潮流求解</span>
+                        </div>
+                        <div class="telemetry-card">
+                            <span class="tele-kpi-tag">BACKEND // 併發架構</span>
+                            <span class="tele-kpi-val">Atomic &bull; FK_Tree</span>
+                            <span class="tele-kpi-sub">事件驅動匯流排與關聯式強一致狀態</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section-block reveal-on-scroll">
-            <div class="block-header">
-                <span class="block-index">03</span>
-                <h2 class="block-heading">Selected Projects</h2>
+        <!-- 01. 核心技術矩陣 -->
+        <section id="matrix" class="arch-section reveal">
+            <div class="section-title-tag">
+                <span class="tag-bracket">[01]</span>
+                <h2 class="tag-heading">DOMAIN MATRIX // 專業核心維度</h2>
+                <span class="tag-line"></span>
             </div>
 
-            <div class="project-card-stack">
-                <article class="project-entry">
-                    <div class="project-meta-row">
-                        <h3 class="project-name">Real-Time Enterprise Order & Queue Platform</h3>
-                        <span class="project-scope">Full Stack / Microservices</span>
+            <div class="blueprint-card-grid">
+                <div class="spec-panel">
+                    <div class="panel-header-strip">
+                        <span class="strip-id">MOD_01 // POWER_SYSTEMS</span>
+                        <span class="strip-status">ACTIVE</span>
                     </div>
-                    <p class="project-brief">
-                        High-concurrency ordering backend equipped with atomic state handling, priority task dispatch, and real-time floor topology state synchronization.
+                    <h3 class="panel-title">電機力學與智慧電網</h3>
+                    <p class="panel-desc">
+                        專攻三相感應電動機等效電路、啟動突波暫態抑制、運算放大器微弱訊號調理與濾波；結合圖論將輸配電網路抽象化，推導最佳經濟調度（Economic Dispatch）與輸電損耗最小化約束。
                     </p>
-                    <div class="project-specs-grid">
-                        <div class="spec-col">
-                            <span class="spec-header">Architecture</span>
-                            <span class="spec-value">Node.js · Express · Reactive Event Bus</span>
-                        </div>
-                        <div class="spec-col">
-                            <span class="spec-header">Persistence</span>
-                            <span class="spec-value">Relational Schema · Strict Foreign Key Constraints</span>
-                        </div>
-                        <div class="spec-col">
-                            <span class="spec-header">Operational Focus</span>
-                            <span class="spec-value">Audit Trails · Low Latency Queue Prioritization</span>
-                        </div>
+                    <div class="chip-stack">
+                        <span class="tech-chip">三相感應馬達轉矩</span>
+                        <span class="tech-chip">複數阻抗匹配</span>
+                        <span class="tech-chip">運算放大器主動濾波</span>
+                        <span class="tech-chip">MATLAB / Simulink</span>
+                        <span class="tech-chip">電力系統圖論拓撲</span>
                     </div>
-                </article>
+                </div>
 
-                <article class="project-entry">
-                    <div class="project-meta-row">
-                        <h3 class="project-name">Context-Aware AI Automation Pipeline</h3>
-                        <span class="project-scope">Applied AI / Tooling</span>
+                <div class="spec-panel">
+                    <div class="panel-header-strip">
+                        <span class="strip-id">MOD_02 // DISTRIBUTED_BACKEND</span>
+                        <span class="strip-status">STABLE</span>
                     </div>
-                    <p class="project-brief">
-                        Deterministic LLM agent interface bridging proprietary internal document sources with external client API execution via standardized context brokers.
+                    <h3 class="panel-title">後端架構與分散式狀態</h3>
+                    <p class="panel-desc">
+                        依循高內聚、低耦合原則構建生產級後端服務。專注於關聯式 Schema 正規化與外鍵約束樹、跨節點狀態同步、低延遲 API 路由與容器化邊界部署。
                     </p>
-                    <div class="project-specs-grid">
-                        <div class="spec-col">
-                            <span class="spec-header">AI Stack</span>
-                            <span class="spec-value">Model Context Protocol (MCP) · Hybrid Retrieval</span>
-                        </div>
-                        <div class="spec-col">
-                            <span class="spec-header">Safety</span>
-                            <span class="spec-value">Strict Prompt Guardrails · Structured Output Parsers</span>
-                        </div>
-                        <div class="spec-col">
-                            <span class="spec-header">Execution</span>
-                            <span class="spec-value">Asynchronous Worker Queues · Rate Limiting</span>
-                        </div>
+                    <div class="chip-stack">
+                        <span class="tech-chip">Node.js / Express</span>
+                        <span class="tech-chip">MySQL / MariaDB</span>
+                        <span class="tech-chip">RESTful API 規格契約</span>
+                        <span class="tech-chip">Docker 容器編排</span>
+                        <span class="tech-chip">狀態持久化一致性</span>
                     </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Ethos Section -->
-        <section id="ethos" class="section-block reveal-on-scroll">
-            <div class="block-header">
-                <span class="block-index">04</span>
-                <h2 class="block-heading">Engineering Values</h2>
-            </div>
-            <div class="values-grid">
-                <div class="value-item">
-                    <h4 class="value-name">First-Principles Design</h4>
-                    <p class="value-text">Deconstruct requirements down to state transitions and physical hardware bounds. Reject cargo-cult software patterns.</p>
-                </div>
-                <div class="value-item">
-                    <h4 class="value-name">Explicit Trade-Offs</h4>
-                    <p class="value-text">Every technical design represents an optimization under constraint. Architecture is chosen, never defaulted.</p>
-                </div>
-                <div class="value-item">
-                    <h4 class="value-name">Maintainability Over Cleverness</h4>
-                    <p class="value-text">Code clarity and operational predictability consistently outperform obscure, unreadable micro-optimizations.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <footer id="contact" class="section-footer reveal-on-scroll">
-            <div class="footer-inner">
-                <div class="footer-info">
-                    <span class="footer-title">Initialize Contact</span>
-                    <p class="footer-text">Open to technical architecture discussions, backend engineering challenges, or applied AI research.</p>
+        <!-- 02. 電機與電網深入展示 -->
+        <section id="power-lab" class="arch-section reveal">
+            <div class="section-title-tag">
+                <span class="tag-bracket">[02]</span>
+                <h2 class="tag-heading">ELECTRICAL DYNAMICS // 電機動態與模擬</h2>
+                <span class="tag-line"></span>
+            </div>
+
+            <div class="terminal-card">
+                <div class="terminal-card-top">
+                    <span class="terminal-cmd">RUN --module=power_flow --sim=transient</span>
+                    <span class="terminal-indicator">RUNNING</span>
                 </div>
-                <div class="footer-actions">
-                    <a href="mailto:contact@example.com" class="action-btn-primary">contact@example.com</a>
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="action-btn-secondary">GitHub</a>
+                <div class="terminal-card-inner">
+                    <div class="project-headline-block">
+                        <h3 class="project-title-large">三相感應馬達動態轉矩建模與模擬</h3>
+                        <span class="project-badge">ELECTRICAL MECHANICS</span>
+                    </div>
+                    <p class="project-detail-text">
+                        針對非線性負載下的三相感應馬達進行微分方程推導，建立涵蓋漏感、定子電阻、轉子激磁與轉差率（Slip）的動態等效電路。利用 MATLAB / Simulink 配置變步長數值求解器，模擬大負載突變時定子湧浪電流與電磁轉矩震盪歷程，並設計專屬運算放大器回授電路作為轉速感測訊號之濾波調適器。
+                    </p>
+
+                    <div class="spec-table-container">
+                        <div class="spec-row">
+                            <span class="spec-cell-label">MATHEMATICAL MODEL:</span>
+                            <span class="spec-cell-value">等微增率法則 (Equal Incremental Cost) &bull; KVL / KCL 複數空間向量</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-cell-label">DYNAMIC PARAMETERS:</span>
+                            <span class="spec-cell-value">Slip s &isin; [0, 1] &bull; 啟動湧浪電流分析 &bull; 磁通飽和非線性校準</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-cell-label">SIMULATION WORKFLOW:</span>
+                            <span class="spec-cell-value">MATLAB Simulink 跨平台求解 &bull; 轉矩-轉速特徵曲線收斂分析</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <span class="sys-signature">Built with precision. Deterministic, modular, scalable.</span>
+
+            <div class="terminal-card space-top">
+                <div class="terminal-card-top">
+                    <span class="terminal-cmd">QUERY --graph=grid_topology --dispatch=optimal</span>
+                    <span class="terminal-indicator">OPTIMIZED</span>
+                </div>
+                <div class="terminal-card-inner">
+                    <div class="project-headline-block">
+                        <h3 class="project-title-large">電網圖論拓撲分析與最佳經濟調度 (ED) 演算法</h3>
+                        <span class="project-badge">SMART GRID OPTIMIZATION</span>
+                    </div>
+                    <p class="project-detail-text">
+                        將電力傳輸骨幹建模為圖論（Graph Theory）中的節點（Buses）與有向加權邊（Transmission Lines），利用資料庫關聯模型精確記錄導納矩陣（Admittance Matrix）與傳輸功率容量極限。結合發電機燃料二次成本曲線，透過拉格朗日乘數（Lagrange Multiplier）與疊代演算法求解最佳負載潮流分配，最小化系統總發電損耗。
+                    </p>
+
+                    <div class="spec-table-container">
+                        <div class="spec-row">
+                            <span class="spec-cell-label">TOPOLOGY ALGORITHM:</span>
+                            <span class="spec-cell-value">圖論拓撲矩陣 &bull; 支路導納模型 (Y-Bus) &bull; 稀疏矩陣求解</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-cell-label">OPTIMIZATION METHOD:</span>
+                            <span class="spec-cell-value">拉格朗日乘數法 &bull; 發電機微增成本平衡 &bull; 傳輸線損耗約束 (B-coefficients)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03. 後端實作 -->
+        <section id="backend-spec" class="arch-section reveal">
+            <div class="section-title-tag">
+                <span class="tag-bracket">[03]</span>
+                <h2 class="tag-heading">BACKEND SPEC // 高併發與強一致性架構</h2>
+                <span class="tag-line"></span>
+            </div>
+
+            <div class="terminal-card">
+                <div class="terminal-card-top">
+                    <span class="terminal-cmd">DEPLOY --service=pos_core --db=mysql_relational</span>
+                    <span class="terminal-indicator">PROD_READY</span>
+                </div>
+                <div class="terminal-card-inner">
+                    <div class="project-headline-block">
+                        <h3 class="project-title-large">高即時性餐飲運營佇列與狀態同步平台</h3>
+                        <span class="project-badge">FULL-STACK & BACKEND CORE</span>
+                    </div>
+                    <p class="project-detail-text">
+                        專為複雜現場交易打造的高可用度營運系統。設計嚴密的關聯資料庫 Schema 與外部索引鍵拓撲，保證併發點單與結帳狀態的 ACID 特性；搭建即時優先佇列排程演算法，將廚房備餐、外送分配與外場動態桌位網格串聯，達成極低延遲的雙向狀態同步。
+                    </p>
+
+                    <div class="spec-table-container">
+                        <div class="spec-row">
+                            <span class="spec-cell-label">CORE BACKEND:</span>
+                            <span class="spec-cell-value">Node.js &bull; Express &bull; 異步事件佇列 &bull; RESTful 契約</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-cell-label">DATA INTEGRITY:</span>
+                            <span class="spec-cell-value">MySQL / MariaDB &bull; 交易審計日誌 &bull; 嚴格級聯與外鍵防護</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04. 工程公理 -->
+        <section id="axioms" class="arch-section reveal">
+            <div class="section-title-tag">
+                <span class="tag-bracket">[04]</span>
+                <h2 class="tag-heading">ENGINEERING AXIOMS // 系統哲學</h2>
+                <span class="tag-line"></span>
+            </div>
+
+            <div class="axioms-grid">
+                <div class="axiom-box">
+                    <span class="axiom-num">01 //</span>
+                    <h4 class="axiom-title">第一性原理驗證</h4>
+                    <p class="axiom-content">
+                        拒絕盲目引用高層抽象與流行技術名詞。所有系統架構與電路設計，均須回到物理定律與基礎狀態轉移方能成立。
+                    </p>
+                </div>
+                <div class="axiom-box">
+                    <span class="axiom-num">02 //</span>
+                    <h4 class="axiom-title">架構是量化的權衡</h4>
+                    <p class="axiom-content">
+                        電氣網路中的線損與發電成本、後端系統中的延遲與一致性：沒有完美解，只有在邊界約束下的最佳化選擇。
+                    </p>
+                </div>
+                <div class="axiom-box">
+                    <span class="axiom-num">03 //</span>
+                    <h4 class="axiom-title">維護性即系統生命</h4>
+                    <p class="axiom-content">
+                        重視確定性、模組解耦與錯誤邊界。高可讀、可推導的代碼與架構，其價值永遠超越難以維護的奇技淫巧。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05. 終端聯絡方式 -->
+        <footer id="terminal" class="terminal-footer reveal">
+            <div class="footer-hud-panel">
+                <div class="footer-hud-header">
+                    <span class="footer-prompt">CONNECT_REQUEST // PROTOCOL: TCP</span>
+                </div>
+                <div class="footer-body">
+                    <p class="footer-msg">
+                        歡迎針對後端分散式架構、電機動力學模擬、智慧電網演算法或各項硬核工程難題進行技術探討與交流。
+                    </p>
+                    <div class="footer-btn-rack">
+                        <a href="mailto:contact@example.com" class="hud-action-button primary-btn">
+                            <span class="btn-prefix">></span> 發送電子郵件 (EMAIL)
+                        </a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hud-action-button secondary-btn">
+                            <span class="btn-prefix">></span> GITHUB 倉庫
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-telemetry-bottom">
+                    <span class="telemetry-stamp">SYSTEM::COMPILED // DETERMINISTIC ARCHITECTURE</span>
+                    <span class="telemetry-coord">LATENCY: MINIMAL &bull; EFFICIENCY: MAX</span>
+                </div>
             </div>
         </footer>
 

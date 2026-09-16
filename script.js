@@ -1,32 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 視差/滾動漸顯：透過 IntersectionObserver 觸發淡入位移
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
-    };
-
-    const revealElements = document.querySelectorAll('.reveal-on-scroll');
-    const scrollObserver = new IntersectionObserver((entries, observer) => {
+    // 滾動漸顯 Observer
+    const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target);
+                obs.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
+    });
 
-    revealElements.forEach(el => scrollObserver.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // 導覽錨點平滑滾動
-    const navLinks = document.querySelectorAll('.nav-item');
-    navLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            const targetId = link.getAttribute('href');
-            if (targetId.startsWith('#')) {
-                event.preventDefault();
-                const targetEl = document.querySelector(targetId);
-                if (targetEl) {
-                    targetEl.scrollIntoView({
+    // 平滑錨點滾動
+    document.querySelectorAll('.hud-nav-item').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
